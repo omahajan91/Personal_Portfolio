@@ -1,1 +1,34 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
 @import "tailwindcss";
+
+/* Define custom theme properties for Tailwind v4 */
+@theme {
+  --color-brand-yellow: #dac5a7;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #111111;
+    color: white;
+    font-family: var(--font-montserrat);
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom animation for the scrolling logo banner */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Adjust this calculation based on the final number and width of your logos */
+    transform: translateX(calc(-200px * 7));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
